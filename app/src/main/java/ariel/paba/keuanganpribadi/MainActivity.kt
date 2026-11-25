@@ -34,6 +34,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PemasukanActivity::class.java)
             startActivity(intent)
         }
+
+        findViewById<Button>(R.id.btnBukaPengeluaran).setOnClickListener {
+            val intent = Intent(this, PengeluaranActivity::class.java)
+            startActivity(intent)
+        }
     }
     private fun tambahKategori() {
         val nama = etNamaKategori.text.toString().trim()
