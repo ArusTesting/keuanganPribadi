@@ -32,6 +32,7 @@ class PengeluaranActivity : AppCompatActivity() {
         etTanggal = findViewById(R.id.etTanggalPengeluaran)
         btnSimpan = findViewById(R.id.btnSimpanPengeluaran)
         rvPengeluaran = findViewById(R.id.rvPengeluaran)
+        daftarPengeluaran.addAll(DataStorage.loadPengeluaran(this))
 
         adapter = PengeluaranAdapter(
             daftarPengeluaran,
@@ -88,7 +89,7 @@ class PengeluaranActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Pengeluaran berhasil diubah", Toast.LENGTH_SHORT).show()
         }
-
+        DataStorage.savePengeluaran(this, daftarPengeluaran)
         resetForm()
     }
 
@@ -115,6 +116,7 @@ class PengeluaranActivity : AppCompatActivity() {
             .setPositiveButton("Ya") { _, _ ->
                 daftarPengeluaran.removeAt(posisi)
                 adapter.notifyItemRemoved(posisi)
+                DataStorage.savePengeluaran(this, daftarPengeluaran)
 
                 if (posisiEdit == posisi) {
                     resetForm()

@@ -28,6 +28,7 @@ class PemasukanActivity : AppCompatActivity() {
         etTanggal = findViewById(R.id.etTanggalPemasukan)
         btnSimpan = findViewById(R.id.btnSimpanPemasukan)
         rvPemasukan = findViewById(R.id.rvPemasukan)
+        daftarPemasukan.addAll(DataStorage.loadPemasukan(this))
         adapter = PemasukanAdapter(
             daftarPemasukan,
             { posisi -> editPemasukan(posisi) },
@@ -72,6 +73,7 @@ class PemasukanActivity : AppCompatActivity() {
             adapter.notifyItemChanged(posisiEdit)
             Toast.makeText(this, "Pemasukan berhasil diubah", Toast.LENGTH_SHORT).show()
         }
+        DataStorage.savePemasukan(this, daftarPemasukan)
         resetForm()
     }
     private fun editPemasukan(posisi: Int) {
@@ -92,6 +94,7 @@ class PemasukanActivity : AppCompatActivity() {
             .setPositiveButton("Ya") { _, _ ->
                 daftarPemasukan.removeAt(posisi)
                 adapter.notifyItemRemoved(posisi)
+                DataStorage.savePemasukan(this, daftarPemasukan)
                 if (posisiEdit == posisi) {
                     resetForm()
                 } else if (posisiEdit > posisi) {

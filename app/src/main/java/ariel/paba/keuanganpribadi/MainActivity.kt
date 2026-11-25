@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         rgJenisKategori = findViewById(R.id.rgJenisKategori)
         btnTambahKategori = findViewById(R.id.btnTambahKategori)
         rvKategori = findViewById(R.id.rvKategori)
+        daftarKategori.addAll(DataStorage.loadKategori(this))
         adapter = KategoriAdapter(daftarKategori)
         rvKategori.layoutManager = LinearLayoutManager(this)
         rvKategori.adapter = adapter
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         daftarKategori.add(Kategori(nama, jenis))
+        DataStorage.saveKategori(this, daftarKategori)
         adapter.notifyItemInserted(daftarKategori.size - 1)
 
         etNamaKategori.text.clear()
