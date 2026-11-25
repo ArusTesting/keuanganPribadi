@@ -61,6 +61,12 @@
         android:layout_height="wrap_content"
         android:text="Kelola Pemasukan" />
 
+    <Button
+        android:id="@+id/btnBukaPengeluaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kelola Pengeluaran" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvKategori"
         android:layout_width="match_parent"
