@@ -55,6 +55,12 @@
         android:layout_height="wrap_content"
         android:text="Tambah Kategori" />
 
+    <Button
+        android:id="@+id/btnBukaPemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kelola Pemasukan" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvKategori"
         android:layout_width="match_parent"

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kelola Pemasukan"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/etNamaPemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Keterangan pemasukan"
+        android:inputType="textCapSentences" />
+
+    <EditText
+        android:id="@+id/etKategoriPemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kategori pemasukan"
+        android:inputType="textCapSentences" />
+
+    <EditText
+        android:id="@+id/etJumlahPemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Jumlah pemasukan"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etTanggalPemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tanggal (DD-MM-YYYY)"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/btnSimpanPemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Pemasukan" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPemasukan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>

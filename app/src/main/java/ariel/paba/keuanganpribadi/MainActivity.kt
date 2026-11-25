@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
     private lateinit var etNamaKategori: EditText
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         rvKategori.adapter = adapter
         btnTambahKategori.setOnClickListener {
             tambahKategori()
+        }
+        findViewById<Button>(R.id.btnBukaPemasukan).setOnClickListener {
+            val intent = Intent(this, PemasukanActivity::class.java)
+            startActivity(intent)
         }
     }
     private fun tambahKategori() {
